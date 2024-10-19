@@ -1,0 +1,65 @@
+:root {
+  --redMainColor: #b2302b;
+  --titleColor: #283237;
+}
+
+.bigBallBannerHeader {
+  width: 2200px;
+  height: 1800px;
+  transform: translate(20%, -50%);
+}
+
+.mediumBallBannerHeader {
+  bottom: 55%;
+}
+
+.smallBallBannerHeader {
+  left: 35%;
+  bottom: 55%;
+}
+
+#navMenu {
+  gap: 15px;
+}
+
+nav {
+  gap: 15px;
+}
+
+.bgRedColor {
+  background-color: var(--redMainColor);
+}
+
+.redColor {
+  color: var(--redMainColor);
+}
+
+.grayBoldColor {
+  color: var(--titleColor);
+}
+
+.bgGray {
+  background-color: var(--titleColor);
+}
+
+.mt250 {
+  margin-top: 15%;
+}
+
+.mt500 {
+  margin-top: 30%;
+}
+
+.hfc {
+  height: fit-content;
+}
+
+.mediumBallAdvide {
+  width: 800px;
+  height: 800px;
+}
+
+.btlrra150 {
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+}
