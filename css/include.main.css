@@ -3210,7 +3210,6 @@ cb {
 .vamci > * {
   vertical-align: middle !important;
 }
-,
 .btn:not([class*="lh"]) > *:not([class*="va"]) .vamg:before {
   content: "";
   width: 1px;
