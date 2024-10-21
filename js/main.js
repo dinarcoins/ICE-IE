@@ -6,6 +6,7 @@ import {
   footerContentRightList,
   footerSocialList,
   iconCompanyList,
+  advideList
 } from "./constants.js";
 
 var navMenu = document.getElementById("navMenu");
@@ -90,63 +91,101 @@ footerSocialContainer.innerHTML = footerSocialList
     `;
   })
   .join("");
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   var slidesContainer = document.querySelector(".slides-container-aboutMe");
-//   var prevButton = document.querySelector(".prev-aboutMe");
-//   var nextButton = document.querySelector(".next-aboutMe");
-//   var currentIndex = 0;
-
-//   // ABOUTME_LIST_IMAGE.forEach(function (item) {
-//   //   var slide = document.createElement("div");
-//   //   var img = document.createElement("img");
-
-//   //   slide.className = "slide";
-//   //   img.src = item.image;
-//   //   img.alt = item.alt;
-
-//   //   slide.appendChild(img);
-//   //   slidesContainer.appendChild(slide);
-//   // });
-
-//   var slides = document.querySelectorAll(".slide");
-
-//   var firstSlide = slides[0].cloneNode(true);
-//   var lastSlide = slides[slides.length - 1].cloneNode(true);
-
-//   slidesContainer.appendChild(firstSlide);
-//   slidesContainer.insertBefore(lastSlide, slides[0]);
-
-//   slides = document.querySelectorAll(".slide");
-
-//   slidesContainer.style.transform = `translateX(-100%)`;
-
-//   function changeSlide(step) {
-//     currentIndex += step;
-
-//     slidesContainer.style.transition = "transform 0.5s ease";
-//     slidesContainer.style.transform = `translateX(${
-//       -(currentIndex + 1) * 100
-//     }%)`;
-
-//     if (currentIndex < 0) {
-//       setTimeout(function () {
-//         slidesContainer.style.transition = "none";
-//         currentIndex = ABOUTME_LIST_IMAGE.length - 1;
-//         slidesContainer.style.transform = `translateX(${
-//           -(currentIndex + 1) * 100
-//         }%)`;
-//       }, 500);
-//     } else if (currentIndex >= ABOUTME_LIST_IMAGE.length) {
-//       setTimeout(function () {
-//         slidesContainer.style.transition = "none";
-//         currentIndex = 0;
-//         slidesContainer.style.transform = `translateX(-100%)`;
-//       }, 500);
-//     }
-//   }
-
-//   setInterval(function () {
-//     changeSlide(1);
-//   }, 3000);
-// });
+  document.addEventListener("DOMContentLoaded", function () {
+    var slidesContainer = document.querySelector(".slides-container-advide");
+    var prevButton = document.querySelector(".prev");
+    var nextButton = document.querySelector(".next");
+    var dotsContainer = document.querySelector(".dots-container");
+    var currentIndex = 0;
+  
+    // Tạo slides và dots
+    advideList.forEach(function (item, index) {
+      var slide = document.createElement("div");
+      var img = document.createElement("img");
+      var dot = document.createElement("span");
+  
+      slide.className = "slide";
+      img.src = item.image;
+      img.alt = item.alt;
+      dot.className = "dot";
+      
+      // Đặt sự kiện cho dot
+      dot.addEventListener("click", function () {
+        goToSlide(index);
+      });
+  
+      slide.appendChild(img);
+      slidesContainer.appendChild(slide);
+      dotsContainer.appendChild(dot);
+    });
+  
+    var slides = document.querySelectorAll(".slide");
+    var dots = document.querySelectorAll(".dot");
+  
+    var firstSlide = slides[0].cloneNode(true);
+    var lastSlide = slides[slides.length - 1].cloneNode(true);
+  
+    slidesContainer.appendChild(firstSlide);
+    slidesContainer.insertBefore(lastSlide, slides[0]);
+  
+    slides = document.querySelectorAll(".slide");
+  
+    slidesContainer.style.transform = `translateX(-100%)`;
+  
+    function changeSlide(step) {
+      currentIndex += step;
+  
+      slidesContainer.style.transition = "transform 0.5s ease";
+      slidesContainer.style.transform = `translateX(${
+        -(currentIndex + 1) * 100
+      }%)`;
+  
+      if (currentIndex < 0) {
+        setTimeout(function () {
+          slidesContainer.style.transition = "none";
+          currentIndex = advideList.length - 1;
+          slidesContainer.style.transform = `translateX(${
+            -(currentIndex + 1) * 100
+          }%)`;
+        }, 500);
+      } else if (currentIndex >= advideList.length) {
+        setTimeout(function () {
+          slidesContainer.style.transition = "none";
+          currentIndex = 0;
+          slidesContainer.style.transform = `translateX(-100%)`;
+        }, 500);
+      }
+  
+      updateDots();
+    }
+  
+    function goToSlide(index) {
+      currentIndex = index;
+      slidesContainer.style.transition = "transform 0.5s ease";
+      slidesContainer.style.transform = `translateX(${
+        -(currentIndex + 1) * 100
+      }%)`;
+      updateDots();
+    }
+  
+    function updateDots() {
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentIndex);
+      });
+    }
+  
+    prevButton.addEventListener("click", function () {
+      changeSlide(-1);
+    });
+  
+    nextButton.addEventListener("click", function () {
+      changeSlide(1);
+    });
+  
+    setInterval(function () {
+      changeSlide(1);
+    }, 3000);
+  
+    updateDots(); // Khởi động cập nhật dots
+  });
+  

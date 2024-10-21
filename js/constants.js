@@ -26,21 +26,21 @@ export var programItemList = [
     img: "./imgs/program1.png",
     title: "Chương trình cử nhân quốc tế",
     text1: "Đại học IMC KREMS (Áo)",
-    text: "Đại học Waikato (New Zealand)",
+    text2: "Đại học Waikato (New Zealand)",
     marginTop: 0,
   },
   {
     img: "./imgs/program2.png",
     title: "Chương trình cử nhân quốc tế",
     text1: "Đại học IMC KREMS (Áo)",
-    text: "Đại học Waikato (New Zealand)",
+    text2: "Đại học Waikato (New Zealand)",
     marginTop: 1,
   },
   {
     img: "./imgs/program3.png",
     title: "Chương trình cử nhân quốc tế",
     text1: "Đại học IMC KREMS (Áo)",
-    text: "Đại học Waikato (New Zealand)",
+    text2: "Đại học Waikato (New Zealand)",
     marginTop: 2,
   },
 ];
@@ -106,29 +106,29 @@ export var footerSocialList = [
   { icon: "fa-brands fa-linkedin", href: "#" },
 ];
 
-export var ABOUTME_LIST_IMAGE = [
+export var advideList = [
   {
-    image: "./image/aboutme1.jpg",
+    image: "./imgs/center1.jpg",
     alt: "aboutme1",
   },
   {
-    image: "./image/aboutme2.jpg",
+    image: "./imgs/center1.jpg",
     alt: "aboutme2",
   },
   {
-    image: "./image/aboutme3.jpg",
+    image: "./imgs/center1.jpg",
     alt: "aboutme3",
   },
   {
-    image: "./image/aboutme4.jpg",
+    image: "./imgs/center1.jpg",
     alt: "aboutme4",
   },
   {
-    image: "./image/aboutme5.jpg",
+    image: "./imgs/center1.jpg",
     alt: "aboutme5",
   },
   {
-    image: "./image/aboutme6.jpg",
+    image: "./imgs/center1.jpg",
     alt: "aboutme6",
   },
 ];
@@ -142,3 +142,4 @@ export var iconCompanyList = [
   { img: "./imgs/iconCompany6.png", alt: "logo6" },
   { img: "./imgs/iconCompany7.png", alt: "logo7" },
 ];
+

@@ -3,19 +3,25 @@
   --titleColor: #283237;
 }
 
+.gap20 {
+  gap: 20px;
+}
+
 .bigBallBannerHeader {
-  width: 2200px;
+  width: 1800px;
   height: 1800px;
-  transform: translate(20%, -50%);
+  transform: translateX(-20%);
+  top: -100%;
+  right: -100%;
 }
 
 .mediumBallBannerHeader {
-  bottom: 55%;
+  right: 30%;
 }
 
 .smallBallBannerHeader {
-  left: 35%;
-  bottom: 55%;
+  bottom: 25%;
+ left: 25%;
 }
 
 #navMenu {
@@ -62,4 +68,75 @@ nav {
 .btlrra150 {
   border-top-left-radius: 150px;
   border-top-right-radius: 150px;
+}
+
+@media screen and (max-width: 991px) {
+  .bigBallBannerHeader {
+    width: 1200px;
+    height: 1200px;
+    transform: translate(20%, -20%);
+  }
+}
+
+
+.slideshow-container-advide {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.slides-container-advide {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.prev,
+.next {
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  background: transparent;
+  color: #ee1f23;
+  outline: none;
+  border: none;
+}
+
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
+
+.prev:focus,
+.next:focus {
+  outline: none;
+}
+
+/* CSS cho dots */
+.dots-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #000; /* Màu dot đang hoạt động */
 }
