@@ -3994,7 +3994,7 @@ a[href^="http"][class=""]:hover {
   width: fit-content;
 }
 .hfc {
-  width: fit-content;
+  height: fit-content;
 }
 .wmxc {
   width: max-content;
@@ -7704,6 +7704,9 @@ input.c3p:-moz-placeholder {
   .wsn-sm {
     white-space: nowrap;
   }
+  .w1-sm {
+    width: 100%;
+  }
 }
 @media (max-width: 479px) {
   .w300-xs {
@@ -8143,6 +8146,10 @@ input.c3p:-moz-placeholder {
   }
   .w1k-lg {
     width: 1000px;
+  }
+  .dn-lg,
+  .dna-lg:after {
+    display: none;
   }
 }
 

@@ -110,26 +110,42 @@ export var advideList = [
   {
     image: "./imgs/center1.jpg",
     alt: "aboutme1",
+    date: "10/14/2024",
+    title: "Hội thảo, học gần nhà, đầu ra chuẩn quốc tế",
+    uniName: "Đại học Hà Nội",
+    link: "#",
   },
   {
     image: "./imgs/center1.jpg",
     alt: "aboutme2",
+    date: "10/14/2024",
+    title: "Hội thảo, học gần nhà, đầu ra chuẩn quốc tế",
+    uniName: "Đại học Hà Nội",
+    link: "#",
   },
   {
     image: "./imgs/center1.jpg",
     alt: "aboutme3",
+    date: "10/14/2024",
+    title: "Hội thảo, học gần nhà, đầu ra chuẩn quốc tế",
+    uniName: "Đại học Hà Nội",
+    link: "#",
   },
   {
     image: "./imgs/center1.jpg",
     alt: "aboutme4",
+    date: "10/14/2024",
+    title: "Hội thảo, học gần nhà, đầu ra chuẩn quốc tế",
+    uniName: "Đại học Hà Nội",
+    link: "#",
   },
   {
     image: "./imgs/center1.jpg",
-    alt: "aboutme5",
-  },
-  {
-    image: "./imgs/center1.jpg",
-    alt: "aboutme6",
+    alt: "aboutme4",
+    date: "10/14/2024",
+    title: "Hội thảo, học gần nhà, đầu ra chuẩn quốc tế",
+    uniName: "Đại học Hà Nội",
+    link: "#",
   },
 ];
 
@@ -143,3 +159,56 @@ export var iconCompanyList = [
   { img: "./imgs/iconCompany7.png", alt: "logo7" },
 ];
 
+export var newList = [
+  {
+    img: "./imgs/news1.jpg",
+    title: "Hội thảo: 'Chọn đúng ngành học - Thành công tương lai'",
+    text: "Thành công trong tương lai ảnh hưởng vào lựa chọn hôm nay của bạn.Làm sao để chọn đúng ngành, đúng nghề.",
+    alt: "new1",
+    textBtn: "Sự kiện",
+  },
+  {
+    img: "./imgs/news1.jpg",
+    title: "Hội thảo: 'Chọn đúng ngành học - Thành công tương lai'",
+    text: "Thành công trong tương lai ảnh hưởng vào lựa chọn hôm nay của bạn.Làm sao để chọn đúng ngành, đúng nghề.",
+    alt: "new2",
+    textBtn: "Theo dõi",
+  },
+  {
+    img: "./imgs/news1.jpg",
+    title: "Hội thảo: 'Chọn đúng ngành học - Thành công tương lai'",
+    text: "Thành công trong tương lai ảnh hưởng vào lựa chọn hôm nay của bạn.Làm sao để chọn đúng ngành, đúng nghề.",
+    alt: "new3",
+    textBtn: "Tin tức",
+  },
+  {
+    img: "./imgs/news1.jpg",
+    title: "Hội thảo: 'Chọn đúng ngành học - Thành công tương lai'",
+    text: "Thành công trong tương lai ảnh hưởng vào lựa chọn hôm nay của bạn.Làm sao để chọn đúng ngành, đúng nghề.",
+    alt: "new4",
+    textBtn: "Tin Tức",
+  },
+  {
+    img: "./imgs/news1.jpg",
+    title: "Hội thảo: 'Chọn đúng ngành học - Thành công tương lai'",
+    text: "Thành công trong tương lai ảnh hưởng vào lựa chọn hôm nay của bạn.Làm sao để chọn đúng ngành, đúng nghề.",
+    alt: "new5",
+    textBtn: "Sự kiện",
+  },
+  {
+    img: "./imgs/news1.jpg",
+    title: "Hội thảo: 'Chọn đúng ngành học - Thành công tương lai'",
+    text: "Thành công trong tương lai ảnh hưởng vào lựa chọn hôm nay của bạn.Làm sao để chọn đúng ngành, đúng nghề.",
+    alt: "new6",
+    textBtn: "Theo dõi",
+  },
+];
+
+export var headerRightList = [
+  {
+    number: "100%",
+    text: "Sinh viên đạt chứng chỉ IELTS Quốc tế sau khi tốt nghiệp",
+  },
+  { number: "1000", text: " Sinh viên đang theo học các chương trình Cử nhân" },
+  { number: "100%", text: "Giảng dạy bằng Tiếng anh" },
+];

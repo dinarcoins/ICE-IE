@@ -1,27 +1,43 @@
 :root {
   --redMainColor: #b2302b;
   --titleColor: #283237;
+  --redColor: #b64944;
 }
 
-.gap20 {
+.gap20p {
   gap: 20px;
 }
 
+.gap100p {
+  gap: 100px;
+}
+
 .bigBallBannerHeader {
-  width: 1800px;
-  height: 1800px;
-  transform: translateX(-20%);
-  top: -100%;
-  right: -100%;
+  width: 1900px;
+  height: 1900px;
+  shape-outside: circle(50% at 0 0);
+  clip-path: circle(50% at 0 0);
+  transform: rotate(90deg);
+  top: 0;
+  right: 0;
+}
+
+.iframeVideo {
+  height: 400px;
 }
 
 .mediumBallBannerHeader {
-  right: 30%;
+  left: 50%;
+  top: 12%;
+  width: 400px;
+  height: 400px;
 }
 
 .smallBallBannerHeader {
-  bottom: 25%;
- left: 25%;
+  top: 15%;
+  left: 30%;
+  width: 100px;
+  height: 100px;
 }
 
 #navMenu {
@@ -63,6 +79,7 @@ nav {
 .mediumBallAdvide {
   width: 800px;
   height: 800px;
+  clip-path: inset(0 0 0 50%);
 }
 
 .btlrra150 {
@@ -70,21 +87,10 @@ nav {
   border-top-right-radius: 150px;
 }
 
-@media screen and (max-width: 991px) {
-  .bigBallBannerHeader {
-    width: 1200px;
-    height: 1200px;
-    transform: translate(20%, -20%);
-  }
-}
-
-
 .slideshow-container-advide {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .slides-container-advide {
@@ -97,46 +103,189 @@ nav {
   box-sizing: border-box;
 }
 
-.prev,
-.next {
-  font-size: 30px;
-  position: absolute;
-  top: 50%;
-  background: transparent;
-  color: #ee1f23;
-  outline: none;
-  border: none;
-}
-
-.prev {
-  left: 0;
-}
-.next {
-  right: 0;
-}
-
-.prev:focus,
-.next:focus {
-  outline: none;
-}
-
 /* CSS cho dots */
-.dots-container {
-  text-align: center;
+.dots-container-advide {
   margin-top: 10px;
 }
 
 .dot {
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   margin: 0 5px;
   border-radius: 50%;
-  background-color: #ccc;
+  background-color: #c4c4c4;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .dot.active {
-  background-color: #000; /* Màu dot đang hoạt động */
+  background-color: var(--redColor);
+}
+
+.slide-news {
+  flex: 0 0 33.33%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.prev,
+.next {
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev {
+  left: 8%;
+}
+
+.next {
+  right: 8%;
+}
+
+.smallBallLibrary {
+  width: 700px;
+  height: 700px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform: translateY(-50%);
+  z-index: -1;
+  border-width: 80px;
+  border-color: var(--redMainColor);
+  border-style: solid;
+}
+
+.container::after {
+  display: none !important;
+}
+
+#programItemContainer {
+  gap: 50px;
+}
+
+.news::before {
+  content: "";
+  background-color: var(--redMainColor);
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  right: 0%;
+  border-radius: 50%;
+  clip-path: inset(0 25% 0 0);
+  transform: translateX(27%);
+  z-index: -1;
+}
+
+.smallBallNew {
+  background-color: var(--redMainColor);
+  right: 30%;
+}
+
+.btnCloseNav {
+  display: none;
+}
+
+.programTitle {
+  position: absolute;
+}
+
+@media screen and (max-width: 1200px) {
+  #menu {
+    width: 200px;
+    right: -200px;
+    overflow: hidden;
+    transition: right 0.4s ease;
+    background-color: var(--redMainColor);
+    position: absolute;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 2;
+  }
+
+  #menu.active {
+    right: 0;
+  }
+
+  #navMenu {
+    flex-direction: column;
+  }
+  .btnCloseNav {
+    display: block;
+  }
+  .bigBallBannerHeader {
+    width: 1600px;
+    height: 1600px;
+  }
+
+  .programTitle {
+    position: relative;
+  }
+  .programItem {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #programItemContainer {
+    gap: 0;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .bigBallBannerHeader {
+    clip-path: circle(40% at 0 0);
+  }
+  .mediumBallBannerHeader {
+    width: 200px;
+    height: 200px;
+  }
+  .smallBallLibrary {
+    transform: scale(0.5);
+  }
+  .slide-news {
+    flex: 0 0 100%;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .bigBallBannerHeader {
+    clip-path: circle(34% at 0 0);
+  }
+  .mediumBallBannerHeader {
+    width: 160px;
+    height: 160px;
+    top: 9%;
+  }
+  .smallBallBannerHeader {
+    width: 40px;
+    height: 40px;
+    top: 10%;
+  }
+  .mediumBallAdvide {
+    width: 500px;
+    height: 500px;
+  }
+  .news::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .iframeVideo {
+    height: 200px;
+  }
 }
