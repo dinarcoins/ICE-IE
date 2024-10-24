@@ -17,6 +17,8 @@ var footerContentLeft = document.getElementById("footerContentLeft");
 var footerContentRight = document.getElementById("footerContentRight");
 var footerSocialContainer = document.getElementById("footerSocial");
 var companyLogoContainer = document.getElementById("companyLogoContainer");
+var counters = document.querySelectorAll(".counter");
+var countersPercent = document.querySelectorAll(".countersPercent");
 
 document.addEventListener("DOMContentLoaded", function () {
   var btnOpenNav = document.querySelector(".btnOpenNav");
@@ -32,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
   navMenu.innerHTML = navMenuList
     .map((item) => {
       return `
-      <a href="${item.href}" target="_blank" class="ttu cf fwb fs12p">${item.text}</a>
+      <a href="${item.href}" class="ttu cf fwb fs1 cpi mlr10">${item.text}</a>
   `;
     })
     .join("");
@@ -48,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
   footerContentLeft.innerHTML = footerContentLeftList
     .map((item) => {
       return `
-      <a class="mb10" href="${item.href}">${item.text}</a>
+      <a class="mb10 fs1 fs09-md" href="${item.href}">${item.text}</a>
     `;
     })
     .join("");
@@ -56,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
   footerContentRight.innerHTML = footerContentRightList
     .map((item) => {
       return `
-    <a class="mb25 w49" href="${item.href}">${item.text}</a>
+    <a class="mb25 w49 fs09-md" href="${item.href}">${item.text}</a>
     `;
     })
     .join("");
@@ -64,50 +66,82 @@ document.addEventListener("DOMContentLoaded", function () {
   footerSocialContainer.innerHTML = footerSocialList
     .map((item) => {
       return `  
-    <a class="" href="${item.href}"><i class="${item.icon} fs2 mr25"></i></a>
+    <a class="fs09-md" href="${item.href}"><i class="${item.icon} fs2 mr25"></i></a>
 
     `;
     })
     .join("");
 
-    adviseItemContainer.innerHTML = adviseItemList
-  .map((item) => {
-    return `
-    <div class="w40 ${item.haveBorder && "bb1 bc0 bss pb25 mb50"}">
-    <div class="fs2 fs1-sm fwb ttc mb15">${item.title}</div>
-    <div class="fs13 fs09-md fwn">${item.desc}</div>
-  </div>
+  adviseItemContainer.innerHTML = adviseItemList
+    .map((item) => {
+      return `
+      <div class="w40 w1-xs ${item.haveBorder && "bb1 bc0 bss pb25 mb50"}">
+        <div class="fs2 fs1-sm fwb ttc mb15">${item.title}</div>
+        <div class="fs1 fs09-md fwn">${item.desc}</div>
+      </div>
     `;
-  })
-  .join("");
+    })
+    .join("");
 
-
-programItemContainer.innerHTML = programItemList
-.map((item) => {
-  return `
+  programItemContainer.innerHTML = programItemList
+    .map((item, index) => {
+      return `
   <div
-    class="brtr50 bóng brtl50 brbl10 brbr10 w60 w1-xs col-lg-4 df jcc fdc pl25 pr25 pb25 pt20 pt40 hfc bgcf programItem ${
-      item.marginTop === 0 ? `mt0` : item.marginTop === 1 ? `mt250` : "mt500"
+    class="brtr50 bóng brtl50 brbl10 brbr10 mla mra df jcc fdc pl25 pr25 pb25 pt20 pt40 hfc bgcf ${
+      index === 0 ? `mt0` : index === 1 ? `mt51` : "mt300"
     }"
   >
     <img
-      class="w1 mla mra mb50 h250"
+      class="w1 mla mra mb50 h1 ofca hmx2"
       src="${item.img}"
       alt="program1"
     />
     <div class="grayBoldColor fwb fs15 mb25">
      ${item.title}
     </div>
-    <div class="tal">${item.text1}</div>
-    <div class="tal">${item.text2}</div>
+    <div class="tal fs1 fs09-sm">${item.text1}</div>
+    <div class="tal fs1 fs09-sm">${item.text2}</div>
   </div>
   `;
-})
-.join("");
+    })
+    .join("");
+
+  counters.forEach((counter) => {
+    const updateCounter = () => {
+      const target = +counter.getAttribute("data-target");
+      const current = +counter.innerText;
+
+      const endTime = 1500;
+      const increment = target / (endTime / 16);
+
+      if (current < target) {
+        counter.innerText = Math.ceil(current + increment);
+        setTimeout(updateCounter, 16);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCounter();
+  });
+
+  countersPercent.forEach((counter) => {
+    const updateCounterPercent = () => {
+      const target = +counter.getAttribute("data-target");
+      const current = +counter.innerText.replace("%", "");
+
+      const endTime = 2000;
+      const increment = target / (endTime / 16);
+
+      if (current < target) {
+        counter.innerText = Math.ceil(current + increment) + "%";
+        setTimeout(updateCounterPercent, 16);
+      } else {
+        counter.innerText = target + "%";
+      }
+    };
+    updateCounterPercent();
+  });
 });
-
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   var slidesContainer = document.querySelector(".slides-container-advide");
@@ -118,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
   slidesContainer.innerHTML = advideList
     .map((item) => {
       return `
-          <div class="slide brtr10 brtl10">
+          <div class="slide brtr10 brtl10 wmn bsbb">
             <img src="${item.image}" alt="${item.alt}" class="brtr10 brtl10 opc w1">
             <div class="bgGray pt25 pl25 pb25 pr25 brbl10 brbr10">
               <div class="fs1 cf ttc">${item.date}</div>
@@ -198,28 +232,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  setInterval(function () {
+  setInal(function () {
     changeSlide(1);
   }, 3000);
-
   updateDots();
 });
 
-let slidesPerView = 3;
+var slidesPerView = 3;
 
-function detectScreenWidth() {
-  const screenWidth = window.innerWidth;
-  return screenWidth;
-}
+// function detectScreenWidth() {
+//   const screenWidth = window.innerWidth;
+//   console.log('slidesPerVisdfsfdsfew', slidesPerView);
+//   return screenWidth;
+
+// }
 
 // Gọi hàm ngay khi trang load
-detectScreenWidth();
+// detectScreenWidth();
+var totalSlides = newList.length;
+var slideWidth = 100 / slidesPerView;
 
 window.addEventListener("resize", function () {
-  if (detectScreenWidth() < 992) {
+  var screenWidth = window.innerWidth;
+  console.log("screenWidth", screenWidth);
+  if (screenWidth < 992) {
     slidesPerView = 1;
+    slideWidth = 100 / slidesPerView;
+    console.log("slidesPerView", slidesPerView);
   } else {
     slidesPerView = 3;
+
+    console.log("slidesPerViewsdsdsd", slidesPerView);
   }
 });
 
@@ -244,8 +287,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .join("");
   }
 
-  const totalSlides = newList.length;
-  const slideWidth = 100 / slidesPerView;
   renderSlides();
 
   function moveSlide(direction) {

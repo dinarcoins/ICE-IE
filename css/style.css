@@ -2,84 +2,14 @@
   --redMainColor: #b2302b;
   --titleColor: #283237;
   --redColor: #b64944;
-  font-family: system-ui;
 }
 
-.gap20p {
-  gap: 20px;
-}
-
-.gap100p {
-  gap: 100px;
-}
-
-.header::before {
-  content: "";
-  width: 1900px;
-  height: 1900px;
-  shape-outside: circle(50% at 0 0);
-  clip-path: circle(50% at 0 0);
-  transform: rotate(90deg);
-  top: 0;
-  right: 0;
-  position: absolute;
-  background: var(--redMainColor);
-  z-index: -2;
-}
-
-.bannerHeader::before {
-  content: "";
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  top: 60%;
-  left: 30%;
-  position: absolute;
-  background: var(--redMainColor);
-  z-index: -1;
-}
-
-.bannerHeader::after {
-  content: "";
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  background: var(--redMainColor);
-  z-index: -1;
-  background-image: url("../imgs/imageHeader1.png");
-  background-position: center;
+.banner {
+  background-image: url('../imgs/headerBanner.png');
+  background-position: top right;
   background-repeat: no-repeat;
-  background-size: 65%;
-}
-
-.iframeVideo {
-  height: 400px;
-}
-
-.mediumBallBannerHeader {
-  left: 50%;
-  top: 12%;
-  width: 400px;
-  height: 400px;
-}
-
-.smallBallBannerHeader {
-  top: 15%;
-  left: 30%;
-  width: 100px;
-  height: 100px;
-}
-
-#navMenu {
-  gap: 15px;
-}
-
-nav {
-  gap: 15px;
+  background-size: 70%;
+  z-index: -1;
 }
 
 .bgRedColor {
@@ -98,54 +28,16 @@ nav {
   background-color: var(--titleColor);
 }
 
-.mt250 {
-  margin-top: 15%;
-}
-
-.mt500 {
-  margin-top: 30%;
-}
-
-.hfc {
-  height: fit-content;
-}
-
 .mediumBallAdvide {
   width: 800px;
   height: 800px;
   clip-path: inset(0 0 0 50%);
 }
 
-.btlrra150 {
-  border-top-left-radius: 150px;
-  border-top-right-radius: 150px;
-}
-
-.slideshow-container-advide {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-
-.slides-container-advide {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.slide {
-  min-width: 100%;
-  box-sizing: border-box;
-}
-
-/* CSS cho dots */
-.dots-container-advide {
-  margin-top: 10px;
-}
-
 .dot {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   margin: 0 5px;
   border-radius: 50%;
   background-color: #c4c4c4;
@@ -155,6 +47,8 @@ nav {
 
 .dot.active {
   background-color: var(--redColor);
+  width: 20px;
+  height: 20px;
 }
 
 .slide-news {
@@ -200,14 +94,6 @@ nav {
   border-style: solid;
 }
 
-.container::after {
-  display: none !important;
-}
-
-#programItemContainer {
-  gap: 50px;
-}
-
 .news::after {
   content: "";
   background-color: var(--redMainColor);
@@ -237,10 +123,6 @@ nav {
   display: none;
 }
 
-.programTitle {
-  position: absolute;
-}
-
 @media screen and (max-width: 1200px) {
   #menu {
     flex-direction: column;
@@ -255,10 +137,12 @@ nav {
     transition: right 0.5s ease;
     width: 200px;
     z-index: 5;
+    display: none;
   }
 
   #menu.active {
     right: 0;
+    display: flex;
   }
 
   #navMenu {
@@ -274,9 +158,6 @@ nav {
     height: 1600px;
   }
 
-  .programTitle {
-    position: relative;
-  }
   .programItem {
     margin-top: 10px;
   }
@@ -284,8 +165,10 @@ nav {
 
 @media screen and (max-width: 1024px) {
   #programItemContainer {
-    gap: 0;
     flex-direction: column;
+  }
+  .news::before {
+   display: none;
   }
 }
 
@@ -298,21 +181,35 @@ nav {
     height: 200px;
   }
   .smallBallLibrary {
-    transform: scale(0.5);
+   width: 350px;
+   height: 350px;
+   border-width: 20px;
   }
   .slide-news {
     flex: 0 0 100%;
+  }
+  .banner {
+    background-image: none;
   }
 }
 
 @media screen and (max-width: 485px) {
   .header::before {
     clip-path: circle(34% at 0 0);
+    width: 1000px;
+    height: 1000px;
   }
   .mediumBallBannerHeader {
     width: 160px;
     height: 160px;
     top: 9%;
+  }
+
+  .bannerHeader::after {
+    background-size: 30%;
+    width: 350px;
+    height: 350px;
+    display: none;
   }
   .smallBallBannerHeader {
     width: 40px;
@@ -323,12 +220,13 @@ nav {
     width: 500px;
     height: 500px;
   }
-  .news::before {
-    width: 300px;
-    height: 300px;
-  }
+
 
   .iframeVideo {
     height: 200px;
+  }
+  
+  .headerItemRight {
+    background-color: var(--redMainColor);
   }
 }

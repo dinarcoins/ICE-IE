@@ -27,43 +27,40 @@ export var programItemList = [
     title: "Chương trình cử nhân quốc tế",
     text1: "Đại học IMC KREMS (Áo)",
     text2: "Đại học Waikato (New Zealand)",
-    marginTop: 0,
   },
   {
     img: "./imgs/program2.png",
     title: "Chương trình cử nhân quốc tế",
     text1: "Đại học IMC KREMS (Áo)",
     text2: "Đại học Waikato (New Zealand)",
-    marginTop: 1,
   },
   {
     img: "./imgs/program3.png",
     title: "Chương trình cử nhân quốc tế",
     text1: "Đại học IMC KREMS (Áo)",
     text2: "Đại học Waikato (New Zealand)",
-    marginTop: 2,
   },
 ];
 
 export var adviseItemList = [
   {
     title: "bắc mỹ",
-    desc: "Bạn sẽ được du học tại Canada, UK,...",
+    desc: "Bạn sẽ được tư vấn du học tại Canada, UK,...",
     haveBorder: true,
   },
   {
-    title: "bắc mỹ",
-    desc: "Bạn sẽ được du học tại Canada, UK,...",
+    title: "Châu Âu",
+    desc: "Bạn sẽ được tư vấn du học tại Áo, Italia, Us, Ireland",
     haveBorder: true,
   },
   {
-    title: "bắc mỹ",
-    desc: "Bạn sẽ được du học tại Canada, UK,...",
+    title: "Châu Á",
+    desc: "Bạn sẽ được tư vấn du học tại Trung Quốc",
     haveBorder: false,
   },
   {
-    title: "bắc mỹ",
-    desc: "Bạn sẽ được du học tại Canada, UK,...",
+    title: "Châu Úc",
+    desc: "Bạn sẽ được tư vấn du học tại Newzeland, ÚcÏ",
     haveBorder: false,
   },
 ];
