@@ -215,7 +215,7 @@ nav {
   height: 500px;
   position: absolute;
   top: 0;
-  right: 0%;
+  right: 0;
   border-radius: 50%;
   clip-path: inset(0 25% 0 0);
   transform: translateX(27%);
@@ -229,6 +229,8 @@ nav {
   background-color: var(--redMainColor);
   right: 30%;
   border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
 
 .btnCloseNav {
