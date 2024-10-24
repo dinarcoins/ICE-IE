@@ -41,7 +41,7 @@ companyLogoContainer.innerHTML = iconCompanyList
 navMenu.innerHTML = navMenuList
   .map((item) => {
     return `
-  <div><a href="${item.href}" target="_blank" rel="noopener noreferrer" class="ttu cf fwb fs12p">${item.text}</a></div>
+      <a href="${item.href}" target="_blank" class="ttu cf fwb fs12p">${item.text}</a>
   `;
   })
   .join("");
