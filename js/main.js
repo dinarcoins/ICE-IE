@@ -28,48 +28,49 @@ document.addEventListener("DOMContentLoaded", function () {
   btnCloseNav.addEventListener("click", function () {
     menu.classList.remove("active");
   });
-});
 
-companyLogoContainer.innerHTML = iconCompanyList
-  .map((item) => {
-    return `
-  <img src="${item.img}" alt="${item.alt}" class="w10"/>
-  `;
-  })
-  .join("");
-
-navMenu.innerHTML = navMenuList
-  .map((item) => {
-    return `
+  navMenu.innerHTML = navMenuList
+    .map((item) => {
+      return `
       <a href="${item.href}" target="_blank" class="ttu cf fwb fs12p">${item.text}</a>
   `;
-  })
-  .join("");
+    })
+    .join("");
 
-programItemContainer.innerHTML = programItemList
-  .map((item) => {
-    return `
-    <div
-      class="brtr50 bóng brtl50 brbl10 brbr10 w60 w1-xs col-lg-4 df jcc fdc pl25 pr25 pb25 pt20 pt40 hfc bgcf programItem ${
-        item.marginTop === 0 ? `mt0` : item.marginTop === 1 ? `mt250` : "mt500"
-      }"
-    >
-      <img
-        class="w1 mla mra mb50 h250"
-        src="${item.img}"
-        alt="program1"
-      />
-      <div class="grayBoldColor fwb fs15 mb25">
-       ${item.title}
-      </div>
-      <div class="tal">${item.text1}</div>
-      <div class="tal">${item.text2}</div>
-    </div>
+  companyLogoContainer.innerHTML = iconCompanyList
+    .map((item) => {
+      return `
+  <img src="${item.img}" alt="${item.alt}" class="w10"/>
+  `;
+    })
+    .join("");
+
+  footerContentLeft.innerHTML = footerContentLeftList
+    .map((item) => {
+      return `
+      <a class="mb10" href="${item.href}">${item.text}</a>
     `;
-  })
-  .join("");
+    })
+    .join("");
 
-adviseItemContainer.innerHTML = adviseItemList
+  footerContentRight.innerHTML = footerContentRightList
+    .map((item) => {
+      return `
+    <a class="mb25 w49" href="${item.href}">${item.text}</a>
+    `;
+    })
+    .join("");
+
+  footerSocialContainer.innerHTML = footerSocialList
+    .map((item) => {
+      return `  
+    <a class="" href="${item.href}"><i class="${item.icon} fs2 mr25"></i></a>
+
+    `;
+    })
+    .join("");
+
+    adviseItemContainer.innerHTML = adviseItemList
   .map((item) => {
     return `
     <div class="w40 ${item.haveBorder && "bb1 bc0 bss pb25 mb50"}">
@@ -80,30 +81,33 @@ adviseItemContainer.innerHTML = adviseItemList
   })
   .join("");
 
-footerContentLeft.innerHTML = footerContentLeftList
-  .map((item) => {
-    return `
-      <a class="mb10" href="${item.href}">${item.text}</a>
-    `;
-  })
-  .join("");
 
-footerContentRight.innerHTML = footerContentRightList
-  .map((item) => {
-    return `
-    <a class="mb25 w49" href="${item.href}">${item.text}</a>
-    `;
-  })
-  .join("");
+programItemContainer.innerHTML = programItemList
+.map((item) => {
+  return `
+  <div
+    class="brtr50 bóng brtl50 brbl10 brbr10 w60 w1-xs col-lg-4 df jcc fdc pl25 pr25 pb25 pt20 pt40 hfc bgcf programItem ${
+      item.marginTop === 0 ? `mt0` : item.marginTop === 1 ? `mt250` : "mt500"
+    }"
+  >
+    <img
+      class="w1 mla mra mb50 h250"
+      src="${item.img}"
+      alt="program1"
+    />
+    <div class="grayBoldColor fwb fs15 mb25">
+     ${item.title}
+    </div>
+    <div class="tal">${item.text1}</div>
+    <div class="tal">${item.text2}</div>
+  </div>
+  `;
+})
+.join("");
+});
 
-footerSocialContainer.innerHTML = footerSocialList
-  .map((item) => {
-    return `  
-    <a class="" href="${item.href}"><i class="${item.icon} fs2 mr25"></i></a>
 
-    `;
-  })
-  .join("");
+
 
 document.addEventListener("DOMContentLoaded", function () {
   var slidesContainer = document.querySelector(".slides-container-advide");
@@ -205,12 +209,11 @@ let slidesPerView = 3;
 
 function detectScreenWidth() {
   const screenWidth = window.innerWidth;
-  return screenWidth
+  return screenWidth;
 }
 
 // Gọi hàm ngay khi trang load
 detectScreenWidth();
-
 
 window.addEventListener("resize", function () {
   if (detectScreenWidth() < 992) {
