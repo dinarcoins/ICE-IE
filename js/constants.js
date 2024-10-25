@@ -147,13 +147,13 @@ export var advideList = [
 ];
 
 export var iconCompanyList = [
-  { img: "./imgs/iconCompany1.png", alt: "logo1" },
-  { img: "./imgs/iconCompany2.png", alt: "logo2" },
-  { img: "./imgs/iconCompany3.png", alt: "logo3" },
-  { img: "./imgs/iconCompany4.png", alt: "logo4" },
-  { img: "./imgs/iconCompany5.png", alt: "logo5" },
-  { img: "./imgs/iconCompany6.png", alt: "logo6" },
-  { img: "./imgs/iconCompany7.png", alt: "logo7" },
+  { img: "./imgs/iconCompany1.png", alt: "logo1", href: "#" },
+  { img: "./imgs/iconCompany2.png", alt: "logo2", href: "#" },
+  { img: "./imgs/iconCompany3.png", alt: "logo3", href: "#" },
+  { img: "./imgs/iconCompany4.png", alt: "logo4", href: "#" },
+  { img: "./imgs/iconCompany5.png", alt: "logo5", href: "#" },
+  { img: "./imgs/iconCompany6.png", alt: "logo6", href: "#" },
+  { img: "./imgs/iconCompany7.png", alt: "logo7", href: "#" },
 ];
 
 export var newList = [
@@ -165,14 +165,14 @@ export var newList = [
     textBtn: "Sự kiện",
   },
   {
-    img: "./imgs/news1.jpg",
+    img: "./imgs/news2.jpg",
     title: "Hội thảo: 'Chọn đúng ngành học - Thành công tương lai'",
     text: "Thành công trong tương lai ảnh hưởng vào lựa chọn hôm nay của bạn.Làm sao để chọn đúng ngành, đúng nghề.",
     alt: "new2",
     textBtn: "Theo dõi",
   },
   {
-    img: "./imgs/news1.jpg",
+    img: "./imgs/news3.jpg",
     title: "Hội thảo: 'Chọn đúng ngành học - Thành công tương lai'",
     text: "Thành công trong tương lai ảnh hưởng vào lựa chọn hôm nay của bạn.Làm sao để chọn đúng ngành, đúng nghề.",
     alt: "new3",
@@ -186,14 +186,14 @@ export var newList = [
     textBtn: "Tin Tức",
   },
   {
-    img: "./imgs/news1.jpg",
+    img: "./imgs/news2.jpg",
     title: "Hội thảo: 'Chọn đúng ngành học - Thành công tương lai'",
     text: "Thành công trong tương lai ảnh hưởng vào lựa chọn hôm nay của bạn.Làm sao để chọn đúng ngành, đúng nghề.",
     alt: "new5",
     textBtn: "Sự kiện",
   },
   {
-    img: "./imgs/news1.jpg",
+    img: "./imgs/news3.jpg",
     title: "Hội thảo: 'Chọn đúng ngành học - Thành công tương lai'",
     text: "Thành công trong tương lai ảnh hưởng vào lựa chọn hôm nay của bạn.Làm sao để chọn đúng ngành, đúng nghề.",
     alt: "new6",

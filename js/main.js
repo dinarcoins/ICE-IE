@@ -16,7 +16,6 @@ var adviseItemContainer = document.getElementById("adviseItemContainer");
 var footerContentLeft = document.getElementById("footerContentLeft");
 var footerContentRight = document.getElementById("footerContentRight");
 var footerSocialContainer = document.getElementById("footerSocial");
-var companyLogoContainer = document.getElementById("companyLogoContainer");
 var counters = document.querySelectorAll(".counter");
 var countersPercent = document.querySelectorAll(".countersPercent");
 
@@ -35,14 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .map((item) => {
       return `
       <a href="${item.href}" class="ttu cf fwb fs1 cpi mlr10">${item.text}</a>
-  `;
-    })
-    .join("");
-
-  companyLogoContainer.innerHTML = iconCompanyList
-    .map((item) => {
-      return `
-  <img src="${item.img}" alt="${item.alt}" class="w10"/>
   `;
     })
     .join("");
@@ -152,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
   slidesContainer.innerHTML = advideList
     .map((item) => {
       return `
-          <div class="slide brtr10 brtl10 wmn bsbb">
+          <div class="slideAdvide brtr10 brtl10 wmn bsbb">
             <img src="${item.image}" alt="${item.alt}" class="brtr10 brtl10 opc w1">
             <div class="bgGray pt25 pl25 pb25 pr25 brbl10 brbr10">
               <div class="fs1 cf ttc">${item.date}</div>
@@ -172,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .join("");
 
   // get all slides và dots
-  var slides = document.querySelectorAll(".slide");
+  var slides = document.querySelectorAll(".slideAdvide");
   var dots = document.querySelectorAll(".dot");
 
   var firstSlide = slides[0].cloneNode(true);
@@ -180,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
   slidesContainer.appendChild(firstSlide);
   slidesContainer.insertBefore(lastSlide, slides[0]);
 
-  slides = document.querySelectorAll(".slide");
+  slides = document.querySelectorAll(".slideAdvide");
 
   slidesContainer.style.transform = `translateX(-100%)`;
 
@@ -218,6 +209,9 @@ document.addEventListener("DOMContentLoaded", function () {
       -(currentIndex + 1) * 100
     }%)`;
     updateDots();
+    clearInterval(function () {
+      changeSlide(1);
+    }, 3000);
   }
 
   function updateDots() {
@@ -232,7 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  setInal(function () {
+  setInterval(function () {
     changeSlide(1);
   }, 3000);
   updateDots();
@@ -258,16 +252,13 @@ window.addEventListener("resize", function () {
   if (screenWidth < 992) {
     slidesPerView = 1;
     slideWidth = 100 / slidesPerView;
-    console.log("slidesPerView", slidesPerView);
   } else {
     slidesPerView = 3;
-
-    console.log("slidesPerViewsdsdsd", slidesPerView);
   }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const slidesContainer = document.querySelector(".slideshow-wrapper");
+  const slidesContainer = document.querySelector(".newsSlide");
   const prevButton = document.querySelector(".prev");
   const nextButton = document.querySelector(".next");
   let currentIndex = 0;
@@ -276,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesContainer.innerHTML = newList
       .map((item) => {
         return `
-          <div class="slide-news">
+          <div class="slide-news bsbb pl15 pr15 pt15 pb15">
             <img src="${item.img}" alt="${item.title}" class="brtr10 brtl10 brbl10 brbr10 w1">
             <div class="fs15 fwb mb15 mt15">${item.title}</div>
             <div class="fs09 fwn mb10">${item.text}</div>
@@ -314,3 +305,4 @@ document.addEventListener("DOMContentLoaded", function () {
     moveSlide(1);
   }, 3000);
 });
+
