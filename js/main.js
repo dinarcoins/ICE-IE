@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   navMenu.innerHTML = navMenuList
     .map((item) => {
       return `
-      <a href="${item.href}" class="ttu cf fwb fs1 cpi mlr10">${item.text}</a>
+      <a href="${item.href}" class="ttu cf fwb fs1 cpi mlr10 mb10">${item.text}</a>
   `;
     })
     .join("");
