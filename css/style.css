@@ -141,22 +141,24 @@
   .header::before {
     clip-path: circle(40% at 0 0);
   }
-
   .slide-news {
     flex: 0 0 100%;
   }
+  .headerItemRight {
+    background-color: var(--redMainColor);
+  }
+}
+
+@media screen and (max-width: 600px) {
   .banner {
     background-image: none;
   }
+
 }
 
 @media screen and (max-width: 485px) {
   .mediumBallAdvide {
     width: 500px;
     height: 500px;
-  }
-
-  .headerItemRight {
-    background-color: var(--redMainColor);
   }
 }

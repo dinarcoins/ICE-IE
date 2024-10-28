@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   adviseItemContainer.innerHTML = adviseItemList
     .map((item) => {
       return `
-      <div class="w40 w1-xs ${item.haveBorder && "bb1 bc0 bss pb25 mb50"}">
+      <div class="w40 w1-xs mb50 ${item.haveBorder && "bb1 bc0 bss pb25 "}">
         <div class="fs2 fs1-sm fwb ttc mb15">${item.title}</div>
         <div class="fs1 fs09-md fwn">${item.desc}</div>
       </div>
@@ -78,8 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .map((item, index) => {
       return `
   <div
-    class="brtr50 bóng brtl50 brbl10 brbr10 mla mra df jcc fdc pl25 pr25 pb25 pt20 pt40 hfc bgcf ${
-      index === 0 ? `mt0` : index === 1 ? `mt51` : "mt300"
+    class="brtr50 bóng brtl50 brbl10  brbr10 mla mra df jcc fdc pl25 pr25 pb25 pt20 pt40 hfc bgcf ${
+      index === 0 ? `mt0` : index === 1 ? `mt51` : "mt300 mt50-xs"
     }"
   >
     <img
